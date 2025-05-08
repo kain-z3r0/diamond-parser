@@ -25,7 +25,3 @@ Thumbs.db
 # Logs
 *.log
 
-# Data folders (raw inputs, staging, outputs)
-# data/raw/
-# data/staging/
-# data/output/
