@@ -55,22 +55,14 @@ class FileManager:
             raise ValueError(f"Unsupported file type: {ext!r}. Supported: {supported}")
         return handler
 
-    def load_file(self, filename: str | Path) -> str | dict[str, Any]:
-        filepath = self._to_path(filename)
+    def load_file(self, dir_key: str, filename: str) -> str | dict[str, Any]:
+        base_dir = self.config.get_path(dir_key)
+        filepath = base_dir / filename
         handler = self._get_handler(filepath)
         return handler.load(filepath)
 
-    def save_file(self, data: str | dict[str, Any], filename: str | Path) -> None:
-        filepath = self._to_path(filename)
+    def save_file(self, data: str | dict[str, Any], dir_key: str, filename: str) -> None:
+        base_dir = self.config.get_path(dir_key)
+        filepath = base_dir / filename
         handler = self._get_handler(filepath)
         handler.save(data, filepath)
-
-    def load_from_config(self, dir_key: str, filename: str) -> str | dict[str, Any]:
-        base_dir = self.config.get_path(dir_key)
-        return self.load_file(base_dir / filename)
-
-    def save_to_config(
-        self, data: str | dict[str, Any], dir_key: str, filename: str
-    ) -> None:
-        base_dir = self.config.get_path(dir_key)
-        self.save_file(data, base_dir / filename)
