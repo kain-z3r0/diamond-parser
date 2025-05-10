@@ -1,0 +1,11 @@
+# Core dependencies
+pydantic>=2.0
+pytest
+
+# Dev + tooling dependencies
+black
+flake8
+mypy
+isort
+bandit
+pre-commit

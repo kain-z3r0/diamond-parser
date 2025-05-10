@@ -2,118 +2,98 @@
 
 A Python application for parsing and managing baseball data.
 
----
+## 📦 Features
 
-## 🚀 Project Features
-
-- Centralized configuration management with `AppConfig`
-- File loading and saving with `FileManager` for JSON and text files
-- Pre-commit hooks for code quality: Black, Flake8, isort
-- Automated tests with pytest
-- Customizable project paths via `settings.json`
+- Load and save JSON and text files using handler classes.
+- Automatic formatting, linting, type checking, and security checks.
+- Pre-commit integration for clean and safe commits.
+- Simple Makefile for running common tasks.
 
 ---
 
-## 📦 Project Structure
+## ⚙ Setup
 
-```
-/diamond-parser
-    /config             → AppConfig module
-    /core               → FileManager module
-    /tests              → pytest test files
-        /fixtures       → test data files (optional)
-    .gitignore          → ignored files/folders
-    .pre-commit-config.yaml → pre-commit hooks setup
-    Makefile           → common dev tasks (format, lint, test)
-    pyproject.toml    → tool configs (Black, Flake8, isort)
-    README.md         → this file
-    requirements.txt  → (optional) dependency list
-    settings.json     → app-level config (paths, logging)
-```
+1. Clone the repository:
+    git clone <repo-url>
+    cd diamond-parser
 
----
+2. Create a virtual environment:
+    python -m venv .venv
+    source .venv/bin/activate  # on Linux/macOS
+    .venv\Scripts\activate     # on Windows
 
-## ⚙️ Setup Instructions
+3. Install dependencies:
+    pip install -r requirements.txt
 
-1️⃣ **Clone the repository**
-
-```bash
-git clone <your-repo-url>
-cd diamond-parser
-```
-
-2️⃣ **Create a virtual environment**
-
-```bash
-python -m venv .venv
-source .venv/bin/activate      # macOS/Linux
-.venv\Scripts\activate         # Windows
-```
-
-3️⃣ **Install dependencies**
-
-```bash
-pip install -r requirements.txt
-```
-
-4️⃣ **Install pre-commit hooks**
-
-```bash
-pre-commit install
-```
+4. Install pre-commit hooks:
+    pre-commit install
 
 ---
 
-## 🔥 Usage
+## ✅ Workflow
 
-```bash
-python main.py
-```
+1. Make code changes.
+2. Run all checks:
+    make check
+3. Format code:
+    make format
+4. Run tests:
+    make test
+5. Commit your changes:
+    git add .
+    git commit -m "Describe your change"
+    git push
 
-This will:
-- Load `settings.json`
-- Initialize logging
-- Run sample file operations with `FileManager`
-
----
-
-## 🧪 Run Tests
-
-```bash
-pytest tests/
-```
+Pre-commit will run automatically on every commit.
 
 ---
 
-## 🛠 Developer Commands (Makefile)
+## 💡 Makefile Commands
 
-| Command           | Description                          |
-|-------------------|-------------------------------------|
-| `make format`    | Run Black + isort                  |
-| `make lint`      | Run Flake8 linting                |
-| `make test`      | Run pytest tests                  |
-| `make hooks`     | Install pre-commit hooks         |
-| `make all`       | Run format, lint, and test       |
-
----
-
-## 📄 Configuration
-
-- `settings.json`: runtime config (app name, version, paths, logging)
-- `.pre-commit-config.yaml`: git hook configs (Black, Flake8, isort)
-- `pyproject.toml`: tool configs (line length, versions, exclusions)
+| Command           | Description                              |
+|-------------------|-----------------------------------------|
+| make lint        | Run all pre-commit hooks                |
+| make format      | Format code with black + isort          |
+| make test        | Run pytest tests                        |
+| make check       | Run pre-commit manually on all files    |
+| make install-hooks | Install pre-commit hooks into git      |
 
 ---
 
-## ✨ Future Improvements (ideas)
+## 🔥 Notes
 
-- Add CSV/YAML file handlers
-- Add CLI interface
-- Add Dockerfile for deployment
-- Add CI pipeline with GitHub Actions
+- The `archive/` directory is **excluded** from all tools.
+- `mypy` is configured to ignore missing stubs like `pydantic` and `pytest`.
+- `bandit` skips the `tests/` folder to avoid false positives on `assert`.
+
+---
+
+## 📂 Project Structure
+
+.
+├── Makefile
+├── README.md
+├── pyproject.toml
+├── .pre-commit-config.yaml
+├── .mypy.ini
+├── config/
+├── core/
+├── parser/
+├── pipeline/
+├── tests/
+├── archive/  # excluded from checks
+└── data/
+
+---
+
+## ✨ Contributing
+
+1. Fork this repo.
+2. Create a new branch.
+3. Submit a pull request with your changes.
 
 ---
 
 ## 📄 License
 
-MIT License
+MIT License © Your Name

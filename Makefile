@@ -1,9 +1,15 @@
 ﻿lint:
 	pre-commit run --all-files
 
-test:
-	pytest
-
 format:
 	black .
 	isort .
+
+test:
+	pytest
+
+check:
+	pre-commit run --all-files
+
+install-hooks:
+	pre-commit install
