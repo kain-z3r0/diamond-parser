@@ -1,54 +1,57 @@
-# Diamond Parser
+## 📖 Pre-commit Workflow Guide
 
-A Python application for parsing and managing baseball data.
+### ⚙️ Setup Instructions
 
-## 📦 Features
+1. Install Python project dependencies:
+    ```bash
+    pip install -r requirements.txt -r requirements-dev.txt
+    ```
 
-- Load and save JSON and text files using handler classes.
-- Automatic formatting, linting, type checking, and security checks.
-- Pre-commit integration for clean and safe commits.
-- Simple Makefile for running common tasks.
-
----
-
-## ⚙ Setup
-
-1. Clone the repository:
-    git clone <repo-url>
-    cd diamond-parser
-
-2. Create a virtual environment:
-    python -m venv .venv
-    source .venv/bin/activate  # on Linux/macOS
-    .venv\Scripts\activate     # on Windows
-
-3. Install dependencies:
-    pip install -r requirements.txt
-
-4. Install pre-commit hooks:
+2. Install pre-commit hooks into git:
+    ```bash
     pre-commit install
+    ```
 
----
-
-## ✅ Workflow
-
-1. Make code changes.
-2. Run all checks:
+3. Run all pre-commit checks manually:
+    ```bash
     make check
-3. Format code:
-    make format
-4. Run tests:
-    make test
-5. Commit your changes:
-    git add .
-    git commit -m "Describe your change"
-    git push
+    ```
 
-Pre-commit will run automatically on every commit.
+4. If pre-commit fixes files (like adding a newline), stage and commit:
+    ```bash
+    git add .
+    git commit -m "Apply pre-commit auto-fixes"
+    git push
+    ```
+
+5. If flake8 fails, check that `.pre-commit-config.yaml` has this line under flake8:
+    ```yaml
+    args: [--max-line-length=115, --extend-ignore=E203,W503]
+    ```
+    If missing, add it, then run:
+    ```bash
+    pre-commit clean
+    pre-commit install
+    ```
+    and rerun:
+    ```bash
+    make check
+    ```
 
 ---
 
-## 💡 Makefile Commands
+### ✅ What’s configured in `.pre-commit-config.yaml`
+- **black** → code formatting (115 chars)
+- **flake8** → linting (115 chars, ignores E203, W503)
+- **mypy** → type checking with explicit package bases
+- **isort** → import sorting
+- **bandit** → security scanning, skips tests/
+- **end-of-file-fixer** → ensures final newline
+- **trailing-whitespace** → trims extra whitespace
+
+---
+
+### 💡 Makefile Commands
 
 | Command           | Description                              |
 |-------------------|-----------------------------------------|
@@ -57,43 +60,30 @@ Pre-commit will run automatically on every commit.
 | make test        | Run pytest tests                        |
 | make check       | Run pre-commit manually on all files    |
 | make install-hooks | Install pre-commit hooks into git      |
+| make clean       | Remove pycache, logs, temp files        |
 
 ---
 
-## 🔥 Notes
+## 🔧 Install Script (`install_dev.sh`)
 
-- The `archive/` directory is **excluded** from all tools.
-- `mypy` is configured to ignore missing stubs like `pydantic` and `pytest`.
-- `bandit` skips the `tests/` folder to avoid false positives on `assert`.
+```bash
+#!/bin/bash
+set -e
 
----
+# Install dependencies
+pip install -r requirements.txt -r requirements-dev.txt
 
-## 📂 Project Structure
+# Install pre-commit hooks
+pre-commit install
 
-.
-├── Makefile
-├── README.md
-├── pyproject.toml
-├── .pre-commit-config.yaml
-├── .mypy.ini
-├── config/
-├── core/
-├── parser/
-├── pipeline/
-├── tests/
-├── archive/  # excluded from checks
-└── data/
+# Run initial check
+pre-commit run --all-files || true
 
----
+# Reminder
+echo "✅ Setup complete! Run 'make check' or commit changes."
+```
 
-## ✨ Contributing
-
-1. Fork this repo.
-2. Create a new branch.
-3. Submit a pull request with your changes.
-
----
-
-## 📄 License
-
-MIT License © Your Name
+Save this as `install_dev.sh`, then run:
+```bash
+bash install_dev.sh
+```
