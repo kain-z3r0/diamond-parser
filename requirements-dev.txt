@@ -1,0 +1,13 @@
+# Formatters
+black
+isort
+
+# Linters + type checkers
+flake8
+mypy
+
+# Security checker
+bandit
+
+# Git hooks
+pre-commit
