@@ -1,0 +1,20 @@
+2025-05-10 02:26:17 - app_config.py  :178 - _setup_logger   - INFO       - Logger initialized
+2025-05-10 02:26:17 - app_config.py  :178 - _setup_logger   - INFO       - Logger initialized
+2025-05-10 02:26:17 - file_manager.py:141 - save_file       - INFO       - Saved file: C:\Users\Bilbo\Documents\python-projects\diamond-parser\data\staging\sample.txt
+2025-05-10 02:26:17 - file_manager.py:118 - load_file       - INFO       - Loaded file: C:\Users\Bilbo\Documents\python-projects\diamond-parser\data\staging\sample.txt
+2025-05-10 02:26:17 - file_manager.py:141 - save_file       - INFO       - Saved file: C:\Users\Bilbo\Documents\python-projects\diamond-parser\data\staging\sample.json
+2025-05-10 02:26:17 - file_manager.py:118 - load_file       - INFO       - Loaded file: C:\Users\Bilbo\Documents\python-projects\diamond-parser\data\staging\sample.json
+2025-05-10 02:26:17 - file_manager.py:141 - save_file       - INFO       - Saved file: C:\Users\Bilbo\Documents\python-projects\diamond-parser\data\staging\sample_overwrite.txt
+2025-05-10 02:26:17 - file_manager.py:135 - save_file       - WARNING    - File exists and overwrite is False: C:\Users\Bilbo\Documents\python-projects\diamond-parser\data\staging\sample_overwrite.txt
+2025-05-10 02:26:17 - file_manager.py:141 - save_file       - INFO       - Saved file: C:\Users\Bilbo\Documents\python-projects\diamond-parser\data\staging\sample_overwrite.txt
+2025-05-10 02:26:17 - file_manager.py:118 - load_file       - INFO       - Loaded file: C:\Users\Bilbo\Documents\python-projects\diamond-parser\data\staging\sample_overwrite.txt
+2025-05-10 02:27:46 - app_config.py  :178 - _setup_logger   - INFO       - Logger initialized
+2025-05-10 02:27:46 - app_config.py  :178 - _setup_logger   - INFO       - Logger initialized
+2025-05-10 02:27:46 - file_manager.py:141 - save_file       - INFO       - Saved file: C:\Users\Bilbo\Documents\python-projects\diamond-parser\data\staging\sample.txt
+2025-05-10 02:27:46 - file_manager.py:118 - load_file       - INFO       - Loaded file: C:\Users\Bilbo\Documents\python-projects\diamond-parser\data\staging\sample.txt
+2025-05-10 02:27:46 - file_manager.py:141 - save_file       - INFO       - Saved file: C:\Users\Bilbo\Documents\python-projects\diamond-parser\data\staging\sample.json
+2025-05-10 02:27:46 - file_manager.py:118 - load_file       - INFO       - Loaded file: C:\Users\Bilbo\Documents\python-projects\diamond-parser\data\staging\sample.json
+2025-05-10 02:27:46 - file_manager.py:141 - save_file       - INFO       - Saved file: C:\Users\Bilbo\Documents\python-projects\diamond-parser\data\staging\sample_overwrite.txt
+2025-05-10 02:27:46 - file_manager.py:135 - save_file       - WARNING    - File exists and overwrite is False: C:\Users\Bilbo\Documents\python-projects\diamond-parser\data\staging\sample_overwrite.txt
+2025-05-10 02:27:46 - file_manager.py:141 - save_file       - INFO       - Saved file: C:\Users\Bilbo\Documents\python-projects\diamond-parser\data\staging\sample_overwrite.txt
+2025-05-10 02:27:46 - file_manager.py:118 - load_file       - INFO       - Loaded file: C:\Users\Bilbo\Documents\python-projects\diamond-parser\data\staging\sample_overwrite.txt
