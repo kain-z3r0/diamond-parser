@@ -8,7 +8,7 @@ class AppConfig:
 
     def __init__(self):
 
-        self.base_dir = Path(__file__).resolve().parent
+        self.base_dir = Path(__file__).resolve().parents[1]
         self.config_path = self.base_dir / "settings.json"
         self._config = self._load_config()
         self._paths = self._setup_paths()
