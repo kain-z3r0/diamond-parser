@@ -1,4 +1,3 @@
-import logging
 from config.app_config import AppConfig
 from core.file_manager import FileManager
 

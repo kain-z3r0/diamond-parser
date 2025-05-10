@@ -23,9 +23,8 @@ Dependencies:
 from pathlib import Path
 import logging.config
 import json
-from pydantic import BaseModel, ValidationError
+from pydantic import BaseModel
 from typing import Dict
-import sys
 
 __all__ = ["AppConfig"]  # Only expose AppConfig when using `from app_config import *`
 
@@ -65,10 +64,13 @@ __all__ = ["AppConfig"]  # Only expose AppConfig when using `from app_config imp
 
 class ConfigFileNotFoundError(FileNotFoundError):
     """Raised when the settings.json file is missing."""
+
     pass  # Custom exception to allow specific catching of missing config file errors
+
 
 class InvalidConfigKeyError(KeyError):
     """Raised when a requested config key does not exist."""
+
     pass  # Custom exception to handle missing keys in config cleanly
 
 
@@ -76,11 +78,13 @@ class AppMetadata(BaseModel):
     name: str
     version: str = "0.0.0"
 
+
 class AppPaths(BaseModel):
     raw_data_dir: str
     output_data_dir: str
     staging_data_dir: str
     logs_dir: str
+
 
 class LoggingConfig(BaseModel):
     version: int
@@ -88,6 +92,7 @@ class LoggingConfig(BaseModel):
     formatters: dict
     handlers: dict
     loggers: dict
+
 
 class AppConfigSchema(BaseModel):
     app: AppMetadata
@@ -110,13 +115,13 @@ class AppConfig:
         """
         self.base_dir = Path(__file__).resolve().parents[1]
         self.config_path = self.base_dir / "settings.json"
-        
+
         # Load the config and validate it using the Pydantic model.
         self._config_data = self._load_config()
 
         # Build absolute paths from relative config values.
         self._resolved_paths = self._setup_paths()
-        
+
         # Set up the application logger.
         self.logger = self._setup_logger()
 
@@ -133,9 +138,7 @@ class AppConfig:
         """
         if not self.config_path.is_file():
             # Raise a specific error instead of sys.exit() so caller can handle it.
-            raise ConfigFileNotFoundError(
-                f"File '{self.config_path}' not found in project directory."
-            )
+            raise ConfigFileNotFoundError(f"File '{self.config_path}' not found in project directory.")
 
         with self.config_path.open("r", encoding="utf-8") as file:
             raw_data = json.load(file)
@@ -165,7 +168,7 @@ class AppConfig:
             logging.Logger: Configured logger instance.
         """
         logs_dir = self._resolved_paths.get("logs_dir")
-        
+
         # Ensure the logs directory exists before setting up logging.
         logs_dir.mkdir(parents=True, exist_ok=True)
 

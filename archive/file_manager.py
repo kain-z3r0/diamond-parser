@@ -11,7 +11,7 @@ from typing import Any, Protocol, ClassVar, Type
 class FileHandler(Protocol):
     @classmethod
     def load(cls, path: Path) -> dict | str | list[dict[str, str]]: ...
-    
+
     @classmethod
     def save(cls, data: dict | str | list[dict[str, Any]], path: Path) -> None: ...
 

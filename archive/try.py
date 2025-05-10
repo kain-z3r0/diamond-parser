@@ -22,11 +22,7 @@ class AppConfig:
         Load and parse the application's settings from settings.json.
         """
         if not self.config_path.is_file():
-            sys.exit(
-                FileNotFoundError(
-                    f"File '{self.config_path}' not found in project directory."
-                )
-            )
+            sys.exit(FileNotFoundError(f"File '{self.config_path}' not found in project directory."))
 
         with self.config_path.open("r", encoding="utf-8") as f:
             return json.load(f)
@@ -48,9 +44,7 @@ class AppConfig:
         logger_cfg = self._config.get("logging", {})
         default_logs = self.base_dir / "logs"
         logs_dir = self._paths.get("logs_dir", default_logs)
-        logs_dir.mkdir(
-            parents=True, exist_ok=True
-        )  # <-- ensure logs directory exists, if not, create it
+        logs_dir.mkdir(parents=True, exist_ok=True)  # <-- ensure logs directory exists, if not, create it
 
         logging.config.dictConfig(logger_cfg)
 
@@ -79,4 +73,3 @@ class AppConfig:
         if dir_name not in self._paths:
             sys.exit(KeyError(f"'{dir_name}' is not in configuration file!"))
         return self._paths[dir_name]
-

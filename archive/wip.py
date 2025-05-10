@@ -3,11 +3,13 @@ import json
 import logging.config
 from typing import Any, Dict
 
+
 class AppConfig:
     """
     Load settings from JSON, ensure dirs exist, configure logging,
     and expose app metadata and paths.
     """
+
     def __init__(self) -> None:
         # Base directory is the directory containing this file
         self.base_dir: Path = Path(__file__).resolve().parent
@@ -74,11 +76,12 @@ def main():
 
     # 4. Emit logs at all levels
     log = cfg.logger
-    log.debug(   "DEBUG    → only to file (verbose formatter).")
-    log.info(    "INFO     → to stderr (simple formatter).")
-    log.warning( "WARNING  → stderr + file.")
-    log.error(   "ERROR    → stderr + file.")
+    log.debug("DEBUG    → only to file (verbose formatter).")
+    log.info("INFO     → to stderr (simple formatter).")
+    log.warning("WARNING  → stderr + file.")
+    log.error("ERROR    → stderr + file.")
     log.critical("CRITICAL → stderr + file.")
+
 
 if __name__ == "__main__":
     main()

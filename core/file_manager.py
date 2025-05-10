@@ -41,9 +41,10 @@ class FileHandler(Protocol):
     Protocol for file handlers.
     Defines a common interface for loading and saving files.
     """
+
     @classmethod
     def load(cls, filepath: Path) -> str | dict[str, Any]: ...
-    
+
     @classmethod
     def save(cls, data: str | dict[str, Any], filepath: Path) -> None: ...
 
@@ -52,6 +53,7 @@ class JSONFileHandler:
     """
     Handler for reading and writing JSON files.
     """
+
     @classmethod
     def load(cls, filepath: Path) -> dict[str, Any]:
         """
@@ -83,6 +85,7 @@ class TextFileHandler:
     """
     Handler for reading and writing text files.
     """
+
     @classmethod
     def load(cls, filepath: Path) -> str:
         """
@@ -113,6 +116,7 @@ class FileManager:
     Manager for loading and saving files with appropriate handlers.
     Supports logging and overwrite control.
     """
+
     _handlers: ClassVar[dict[str, Type[FileHandler]]] = {
         ".json": JSONFileHandler,
         ".txt": TextFileHandler,
@@ -185,13 +189,7 @@ class FileManager:
             self.logger.error(f"Failed to load file {filepath}: {e}")
             raise IOError(f"Failed to load {filepath}: {e}") from e
 
-    def save_file(
-        self,
-        data: str | dict[str, Any],
-        dir_key: str,
-        filename: str,
-        overwrite: bool = True
-    ) -> None:
+    def save_file(self, data: str | dict[str, Any], dir_key: str, filename: str, overwrite: bool = True) -> None:
         """
         Save data to a file in a directory specified by the config.
 

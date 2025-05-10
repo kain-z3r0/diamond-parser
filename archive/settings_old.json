@@ -3,10 +3,10 @@
 		"name": "diamond-parser",
 		"version": "0.1.0"
 	}
-	
+
 	"paths": {
 		"raw_data_dir
-	
+
 
 
 
@@ -85,7 +85,7 @@
   },
 
   "logging": {
-    "version": 1, 
+    "version": 1,
     "disable_existing_loggers": false,
     "formatters": {
         "simple": {
@@ -93,7 +93,7 @@
         }
     },
     "handlers": {
-        "console": 
+        "console":
     }
   }
 

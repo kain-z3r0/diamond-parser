@@ -3,14 +3,14 @@
 		"name": "diamond-parser",
 		"version": "0.1.0"
 	},
-	
+
 	"paths": {
 		"raw_data_dir": "data/raw",
 		"output_data_dir": "data/output",
 		"staging_data_dir": "data/staging",
 		"logs_dir": "logs"
 	},
-	
+
 	"logging": {
 		"version": 1,
 		"disable_existing_loggers": false,
@@ -35,7 +35,7 @@
 			  "formatter": "verbose",
 			  "level": "DEBUG",
 			  "filename": "logs/diamond_parser.log",
-			  "maxBytes": 50000, 	  
+			  "maxBytes": 50000,
 			  "backupCount": 5,
 			  "encoding": "utf-8"
 			}
