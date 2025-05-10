@@ -1,54 +1,85 @@
-import json
-import logging
-import logging.config
 from pathlib import Path
-from dataclasses import dataclass, field
+import logging.config
+import json
+import sys
 
-@dataclass
+
 class AppConfig:
-    app: dict = field(default_factory=dict)
-    paths: dict[str, str] = field(default_factory=dict)
-    logging_cfg: dict = field(default_factory=dict)
 
-    @classmethod
-    def load(cls, config_path: Path = Path("settings.json")) -> "AppConfig":
-        if not config_path.is_file():
-            raise FileNotFoundError(f"{config_path} not found.")
-        data = json.loads(config_path.read_text())
+    def __init__(self):
 
-        # Ensure paths exist
-        for p in data.get("paths", {}).values():
-            Path(p).mkdir(parents=True, exist_ok=True)
+        self.base_dir = Path(__file__).resolve().parents[1]
+        self.config_path = self.base_dir / "settings.json"
+        self._config = self._load_config()
+        self._paths = self._setup_paths()
 
-        # Configure logging
-        log_cfg = data.get("logging", {})
-        if log_cfg:
-            logging.config.dictConfig(log_cfg)
+        # Init logger
+        self.logger = self._setup_logger()
 
-        return cls(
-            app=data.get("app", {}),
-            paths=data.get("paths", {}),
-            logging_cfg=log_cfg
-        )
+    def _load_config(self):
+        """
+        Load and parse the application's settings from settings.json.
+        """
+        if not self.config_path.is_file():
+            sys.exit(
+                FileNotFoundError(
+                    f"File '{self.config_path}' not found in project directory."
+                )
+            )
 
-    def get_config(self, section: str, key: str = None):
-        sec = getattr(self, section, {})
-        return sec[key] if key else sec
+        with self.config_path.open("r", encoding="utf-8") as f:
+            return json.load(f)
 
-    def get_logger(self) -> logging.Logger:
-        return logging.getLogger("diamond_parser")
+    def _setup_paths(self):
+        """
+        Construct absolute paths for project directories defined in the config.
+        """
+        paths_dict = {}
+        for dir_name, rel_path in self._config.get("paths", {}).items():
+            paths_dict[dir_name] = self.base_dir / rel_path
 
+        return paths_dict
 
-if __name__ == "__main__":
-    cfg = AppConfig.load()
-    logger = cfg.get_logger()
+    def _setup_logger(self):
+        """
+        Configure logging using the provided settings in the settings.json and ensure the logs directory exists.
+        """
+        logger_cfg = self._config.get("logging", {})
+        default_logs = self.base_dir / "logs"
+        logs_dir = self._paths.get("logs_dir", default_logs)
+        logs_dir.mkdir(
+            parents=True, exist_ok=True
+        )  # <-- ensure logs directory exists, if not, create it
 
-    # This will go into the file only
-    logger.debug("Debugging details")
+        logging.config.dictConfig(logger_cfg)
+        logger = logging.getLogger(self.app_name)
+        print(f"Logger setup: {logger}")
+        
+        return logger
+        
+    @property
+    def paths(self) -> dict[str, Path]:
+        """
+        Return dict of named absolute paths.
+        """
+        return self._paths
 
-    # These will appear on console (stderr) and in the file
-    logger.warning("This is a warning")
-    logger.error("This is an error")
+    @property
+    def app_name(self):
+        return self._config.get("app").get("name")
 
-    print("App name:", cfg.get_config("app", "name"))
-    print("Raw data dir:", cfg.get_config("paths", "raw_data_dir"))
+    @property
+    def app_version(self):
+        """
+        Return app version from config, defaulting to '0.0.0'.
+        """
+        return self._config.get("app").get("version", "0.0.0")
+
+    def get_path(self, dir_name: str) -> Path:
+        """
+        Return the absolute path for a configured directory or exit if not found.
+        """
+        if dir_name not in self._paths:
+            sys.exit(KeyError(f"'{dir_name}' is not in configuration file!"))
+        return self._paths[dir_name]
+
