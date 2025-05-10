@@ -19,18 +19,18 @@
 
 repos:
   - repo: https://github.com/psf/black
-    rev: 24.3.0  # Use the latest stable Black release
+    rev: 25.1.0  # Use the latest stable Black release
     hooks:
       - id: black
         language_version: python3.13  # Match your Python version
 
   - repo: https://github.com/pycqa/flake8
-    rev: 7.0.0
+    rev: 7.2.0
     hooks:
       - id: flake8
 
   - repo: https://github.com/pre-commit/pre-commit-hooks
-    rev: v4.5.0
+    rev: v5.0.0
     hooks:
       - id: end-of-file-fixer
       - id: trailing-whitespace
