@@ -1,27 +1,29 @@
-# Byte-compiled / optimized
+# .gitignore
+
+# Python
 __pycache__/
 *.py[cod]
-*$py.class
+*.egg
+*.egg-info/
+dist/
+build/
 
 # Virtual environments
-venv/
 .venv/
 env/
-ENV/
+venv/
 
-# Editor / IDE
+# IDEs
 .vscode/
 .idea/
-*.sublime-workspace
 *.sublime-project
+*.sublime-workspace
+
+# Test cache
+.pytest_cache/
+.coverage
+htmlcov/
 
 # OS files
 .DS_Store
 Thumbs.db
-
-# Environment files
-.env
-
-# Logs
-*.log
-

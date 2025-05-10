@@ -1,0 +1,119 @@
+2025-05-09 12:59:16 - wip.py         :77  - main            - DEBUG      - DEBUG    → only to file (verbose formatter).
+2025-05-09 12:59:16 - wip.py         :78  - main            - INFO       - INFO     → to stderr (simple formatter).
+2025-05-09 12:59:16 - wip.py         :79  - main            - WARNING    - WARNING  → stderr + file.
+2025-05-09 12:59:16 - wip.py         :80  - main            - ERROR      - ERROR    → stderr + file.
+2025-05-09 12:59:16 - wip.py         :81  - main            - CRITICAL   - CRITICAL → stderr + file.
+2025-05-09 12:59:21 - wip.py         :77  - main            - DEBUG      - DEBUG    → only to file (verbose formatter).
+2025-05-09 12:59:21 - wip.py         :78  - main            - INFO       - INFO     → to stderr (simple formatter).
+2025-05-09 12:59:21 - wip.py         :79  - main            - WARNING    - WARNING  → stderr + file.
+2025-05-09 12:59:21 - wip.py         :80  - main            - ERROR      - ERROR    → stderr + file.
+2025-05-09 12:59:21 - wip.py         :81  - main            - CRITICAL   - CRITICAL → stderr + file.
+2025-05-09 12:59:22 - wip.py         :77  - main            - DEBUG      - DEBUG    → only to file (verbose formatter).
+2025-05-09 12:59:22 - wip.py         :78  - main            - INFO       - INFO     → to stderr (simple formatter).
+2025-05-09 12:59:22 - wip.py         :79  - main            - WARNING    - WARNING  → stderr + file.
+2025-05-09 12:59:22 - wip.py         :80  - main            - ERROR      - ERROR    → stderr + file.
+2025-05-09 12:59:22 - wip.py         :81  - main            - CRITICAL   - CRITICAL → stderr + file.
+2025-05-09 12:59:23 - wip.py         :77  - main            - DEBUG      - DEBUG    → only to file (verbose formatter).
+2025-05-09 12:59:23 - wip.py         :78  - main            - INFO       - INFO     → to stderr (simple formatter).
+2025-05-09 12:59:23 - wip.py         :79  - main            - WARNING    - WARNING  → stderr + file.
+2025-05-09 12:59:23 - wip.py         :80  - main            - ERROR      - ERROR    → stderr + file.
+2025-05-09 12:59:23 - wip.py         :81  - main            - CRITICAL   - CRITICAL → stderr + file.
+2025-05-09 12:59:23 - wip.py         :77  - main            - DEBUG      - DEBUG    → only to file (verbose formatter).
+2025-05-09 12:59:23 - wip.py         :78  - main            - INFO       - INFO     → to stderr (simple formatter).
+2025-05-09 12:59:23 - wip.py         :79  - main            - WARNING    - WARNING  → stderr + file.
+2025-05-09 12:59:23 - wip.py         :80  - main            - ERROR      - ERROR    → stderr + file.
+2025-05-09 12:59:23 - wip.py         :81  - main            - CRITICAL   - CRITICAL → stderr + file.
+2025-05-09 12:59:23 - wip.py         :77  - main            - DEBUG      - DEBUG    → only to file (verbose formatter).
+2025-05-09 12:59:23 - wip.py         :78  - main            - INFO       - INFO     → to stderr (simple formatter).
+2025-05-09 12:59:23 - wip.py         :79  - main            - WARNING    - WARNING  → stderr + file.
+2025-05-09 12:59:23 - wip.py         :80  - main            - ERROR      - ERROR    → stderr + file.
+2025-05-09 12:59:23 - wip.py         :81  - main            - CRITICAL   - CRITICAL → stderr + file.
+2025-05-09 12:59:24 - wip.py         :77  - main            - DEBUG      - DEBUG    → only to file (verbose formatter).
+2025-05-09 12:59:24 - wip.py         :78  - main            - INFO       - INFO     → to stderr (simple formatter).
+2025-05-09 12:59:24 - wip.py         :79  - main            - WARNING    - WARNING  → stderr + file.
+2025-05-09 12:59:24 - wip.py         :80  - main            - ERROR      - ERROR    → stderr + file.
+2025-05-09 12:59:24 - wip.py         :81  - main            - CRITICAL   - CRITICAL → stderr + file.
+2025-05-09 12:59:24 - wip.py         :77  - main            - DEBUG      - DEBUG    → only to file (verbose formatter).
+2025-05-09 12:59:24 - wip.py         :78  - main            - INFO       - INFO     → to stderr (simple formatter).
+2025-05-09 12:59:24 - wip.py         :79  - main            - WARNING    - WARNING  → stderr + file.
+2025-05-09 12:59:24 - wip.py         :80  - main            - ERROR      - ERROR    → stderr + file.
+2025-05-09 12:59:24 - wip.py         :81  - main            - CRITICAL   - CRITICAL → stderr + file.
+2025-05-09 12:59:25 - wip.py         :77  - main            - DEBUG      - DEBUG    → only to file (verbose formatter).
+2025-05-09 12:59:25 - wip.py         :78  - main            - INFO       - INFO     → to stderr (simple formatter).
+2025-05-09 12:59:25 - wip.py         :79  - main            - WARNING    - WARNING  → stderr + file.
+2025-05-09 12:59:25 - wip.py         :80  - main            - ERROR      - ERROR    → stderr + file.
+2025-05-09 12:59:25 - wip.py         :81  - main            - CRITICAL   - CRITICAL → stderr + file.
+2025-05-09 12:59:25 - wip.py         :77  - main            - DEBUG      - DEBUG    → only to file (verbose formatter).
+2025-05-09 12:59:25 - wip.py         :78  - main            - INFO       - INFO     → to stderr (simple formatter).
+2025-05-09 12:59:25 - wip.py         :79  - main            - WARNING    - WARNING  → stderr + file.
+2025-05-09 12:59:25 - wip.py         :80  - main            - ERROR      - ERROR    → stderr + file.
+2025-05-09 12:59:25 - wip.py         :81  - main            - CRITICAL   - CRITICAL → stderr + file.
+2025-05-09 12:59:25 - wip.py         :77  - main            - DEBUG      - DEBUG    → only to file (verbose formatter).
+2025-05-09 12:59:25 - wip.py         :78  - main            - INFO       - INFO     → to stderr (simple formatter).
+2025-05-09 12:59:25 - wip.py         :79  - main            - WARNING    - WARNING  → stderr + file.
+2025-05-09 12:59:25 - wip.py         :80  - main            - ERROR      - ERROR    → stderr + file.
+2025-05-09 12:59:25 - wip.py         :81  - main            - CRITICAL   - CRITICAL → stderr + file.
+2025-05-09 12:59:26 - wip.py         :77  - main            - DEBUG      - DEBUG    → only to file (verbose formatter).
+2025-05-09 12:59:26 - wip.py         :78  - main            - INFO       - INFO     → to stderr (simple formatter).
+2025-05-09 12:59:26 - wip.py         :79  - main            - WARNING    - WARNING  → stderr + file.
+2025-05-09 12:59:26 - wip.py         :80  - main            - ERROR      - ERROR    → stderr + file.
+2025-05-09 12:59:26 - wip.py         :81  - main            - CRITICAL   - CRITICAL → stderr + file.
+2025-05-09 12:59:26 - wip.py         :77  - main            - DEBUG      - DEBUG    → only to file (verbose formatter).
+2025-05-09 12:59:26 - wip.py         :78  - main            - INFO       - INFO     → to stderr (simple formatter).
+2025-05-09 12:59:26 - wip.py         :79  - main            - WARNING    - WARNING  → stderr + file.
+2025-05-09 12:59:26 - wip.py         :80  - main            - ERROR      - ERROR    → stderr + file.
+2025-05-09 12:59:26 - wip.py         :81  - main            - CRITICAL   - CRITICAL → stderr + file.
+2025-05-09 12:59:26 - wip.py         :77  - main            - DEBUG      - DEBUG    → only to file (verbose formatter).
+2025-05-09 12:59:26 - wip.py         :78  - main            - INFO       - INFO     → to stderr (simple formatter).
+2025-05-09 12:59:26 - wip.py         :79  - main            - WARNING    - WARNING  → stderr + file.
+2025-05-09 12:59:26 - wip.py         :80  - main            - ERROR      - ERROR    → stderr + file.
+2025-05-09 12:59:26 - wip.py         :81  - main            - CRITICAL   - CRITICAL → stderr + file.
+2025-05-09 12:59:27 - wip.py         :77  - main            - DEBUG      - DEBUG    → only to file (verbose formatter).
+2025-05-09 12:59:27 - wip.py         :78  - main            - INFO       - INFO     → to stderr (simple formatter).
+2025-05-09 12:59:27 - wip.py         :79  - main            - WARNING    - WARNING  → stderr + file.
+2025-05-09 12:59:27 - wip.py         :80  - main            - ERROR      - ERROR    → stderr + file.
+2025-05-09 12:59:27 - wip.py         :81  - main            - CRITICAL   - CRITICAL → stderr + file.
+2025-05-09 14:27:50 - try.py         :73  - main1           - DEBUG      - This is a debug message holmes!
+2025-05-09 14:29:45 - try.py         :73  - main1           - DEBUG      - This is a debug message holmes!
+2025-05-09 14:32:03 - try.py         :84  - main1           - DEBUG      - This is a debug message holmes!
+2025-05-09 14:32:27 - try.py         :84  - main1           - WARNING    - This is a warning message holmes!
+2025-05-09 14:34:06 - try.py         :77  - main1           - WARNING    - This is a w message holmes!
+2025-05-09 14:35:28 - try.py         :84  - main1           - WARNING    - This is a warning message holmes!
+2025-05-09 14:35:50 - try.py         :84  - main1           - WARNING    - This is a warning message holmes!
+2025-05-09 14:41:30 - try.py         :91  - main1           - WARNING    - This is a warning message holmes!
+2025-05-09 14:41:38 - try.py         :91  - main1           - WARNING    - This is a warning message holmes!
+2025-05-09 14:43:02 - try.py         :93  - main1           - WARNING    - This is a warning message holmes!
+2025-05-09 14:44:02 - try.py         :93  - main1           - WARNING    - This is a warning message holmes!
+2025-05-09 15:12:55 - main.py        :9   - main            - ERROR      - [ERROR] message dawg!
+2025-05-09 20:39:31 - main.py        :11  - main            - INFO       - Application started.
+2025-05-09 20:39:31 - main.py        :23  - main            - INFO       - Saved example.json to output_data_dir
+2025-05-09 20:39:31 - main.py        :27  - main            - INFO       - Loaded data: {'key': 'value', 'number': 42}
+2025-05-09 21:24:23 - main.py        :11  - main            - INFO       - Application started.
+2025-05-09 21:24:40 - main.py        :11  - main            - INFO       - Application started.
+2025-05-09 21:24:40 - main.py        :23  - main            - INFO       - Saved example.json to output_data_dir
+2025-05-09 21:24:40 - main.py        :27  - main            - INFO       - Loaded data: {'key': 'value', 'number': 42}
+2025-05-09 21:29:46 - main.py        :11  - main            - INFO       - Application started.
+2025-05-09 21:30:56 - main.py        :11  - main            - INFO       - Application started.
+2025-05-09 21:30:56 - main.py        :22  - main            - INFO       - Loaded data: {data}
+2025-05-09 21:30:56 - main.py        :29  - main            - INFO       - Saved e1.txt to staging_data_dir
+2025-05-09 21:31:03 - main.py        :11  - main            - INFO       - Application started.
+2025-05-09 21:31:03 - main.py        :22  - main            - INFO       - Loaded data: {data}
+2025-05-09 21:31:03 - main.py        :29  - main            - INFO       - Saved e1.txt to staging_data_dir
+2025-05-09 22:55:17 - app_config.py  :174 - _setup_logger   - INFO       - Logger initialized
+2025-05-09 22:55:17 - main.py        :12  - main            - INFO       - Application started.
+2025-05-09 22:55:17 - file_manager.py:182 - load_file       - INFO       - Loaded file: C:\Users\Bilbo\Documents\python-projects\diamond-parser\data\raw\e1.txt
+2025-05-09 22:55:17 - main.py        :25  - main            - INFO       - Loaded data from raw_data_dir/e1.txt: 
+2025-05-09 22:55:17 - file_manager.py:212 - save_file       - WARNING    - File exists and overwrite is False: C:\Users\Bilbo\Documents\python-projects\diamond-parser\data\staging\e1.txt
+2025-05-09 22:55:17 - main.py        :38  - main            - WARNING    - File already exists, trying again with overwrite=True: C:\Users\Bilbo\Documents\python-projects\diamond-parser\data\staging\e1.txt already exists and overwrite is False.
+2025-05-09 22:55:17 - file_manager.py:218 - save_file       - INFO       - Saved file: C:\Users\Bilbo\Documents\python-projects\diamond-parser\data\staging\e1.txt
+2025-05-09 22:55:17 - main.py        :42  - main            - INFO       - Saved e1.txt to staging_data_dir (overwrite=True)
+2025-05-09 22:59:05 - app_config.py  :174 - _setup_logger   - INFO       - Logger initialized
+2025-05-09 22:59:05 - app_config.py  :174 - _setup_logger   - INFO       - Logger initialized
+2025-05-09 22:59:05 - file_manager.py:218 - save_file       - INFO       - Saved file: C:\Users\Bilbo\Documents\python-projects\diamond-parser\data\staging\sample.txt
+2025-05-09 22:59:05 - file_manager.py:182 - load_file       - INFO       - Loaded file: C:\Users\Bilbo\Documents\python-projects\diamond-parser\data\staging\sample.txt
+2025-05-09 22:59:05 - file_manager.py:218 - save_file       - INFO       - Saved file: C:\Users\Bilbo\Documents\python-projects\diamond-parser\data\staging\sample.json
+2025-05-09 22:59:05 - file_manager.py:182 - load_file       - INFO       - Loaded file: C:\Users\Bilbo\Documents\python-projects\diamond-parser\data\staging\sample.json
+2025-05-09 22:59:05 - file_manager.py:218 - save_file       - INFO       - Saved file: C:\Users\Bilbo\Documents\python-projects\diamond-parser\data\staging\sample_overwrite.txt
+2025-05-09 22:59:05 - file_manager.py:212 - save_file       - WARNING    - File exists and overwrite is False: C:\Users\Bilbo\Documents\python-projects\diamond-parser\data\staging\sample_overwrite.txt
+2025-05-09 22:59:05 - file_manager.py:218 - save_file       - INFO       - Saved file: C:\Users\Bilbo\Documents\python-projects\diamond-parser\data\staging\sample_overwrite.txt
+2025-05-09 22:59:05 - file_manager.py:182 - load_file       - INFO       - Loaded file: C:\Users\Bilbo\Documents\python-projects\diamond-parser\data\staging\sample_overwrite.txt
