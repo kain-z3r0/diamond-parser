@@ -102,7 +102,7 @@
 2025-05-09 22:55:17 - app_config.py  :174 - _setup_logger   - INFO       - Logger initialized
 2025-05-09 22:55:17 - main.py        :12  - main            - INFO       - Application started.
 2025-05-09 22:55:17 - file_manager.py:182 - load_file       - INFO       - Loaded file: C:\Users\Bilbo\Documents\python-projects\diamond-parser\data\raw\e1.txt
-2025-05-09 22:55:17 - main.py        :25  - main            - INFO       - Loaded data from raw_data_dir/e1.txt: 
+2025-05-09 22:55:17 - main.py        :25  - main            - INFO       - Loaded data from raw_data_dir/e1.txt:
 2025-05-09 22:55:17 - file_manager.py:212 - save_file       - WARNING    - File exists and overwrite is False: C:\Users\Bilbo\Documents\python-projects\diamond-parser\data\staging\e1.txt
 2025-05-09 22:55:17 - main.py        :38  - main            - WARNING    - File already exists, trying again with overwrite=True: C:\Users\Bilbo\Documents\python-projects\diamond-parser\data\staging\e1.txt already exists and overwrite is False.
 2025-05-09 22:55:17 - file_manager.py:218 - save_file       - INFO       - Saved file: C:\Users\Bilbo\Documents\python-projects\diamond-parser\data\staging\e1.txt
@@ -117,3 +117,11 @@
 2025-05-09 22:59:05 - file_manager.py:212 - save_file       - WARNING    - File exists and overwrite is False: C:\Users\Bilbo\Documents\python-projects\diamond-parser\data\staging\sample_overwrite.txt
 2025-05-09 22:59:05 - file_manager.py:218 - save_file       - INFO       - Saved file: C:\Users\Bilbo\Documents\python-projects\diamond-parser\data\staging\sample_overwrite.txt
 2025-05-09 22:59:05 - file_manager.py:182 - load_file       - INFO       - Loaded file: C:\Users\Bilbo\Documents\python-projects\diamond-parser\data\staging\sample_overwrite.txt
+2025-05-09 23:18:55 - app_config.py  :174 - _setup_logger   - INFO       - Logger initialized
+2025-05-09 23:18:55 - main.py        :12  - main            - INFO       - Application started.
+2025-05-09 23:18:55 - file_manager.py:182 - load_file       - INFO       - Loaded file: C:\Users\Bilbo\Documents\python-projects\diamond-parser\data\raw\e1.txt
+2025-05-09 23:18:55 - main.py        :25  - main            - INFO       - Loaded data from raw_data_dir/e1.txt:
+2025-05-09 23:18:55 - file_manager.py:212 - save_file       - WARNING    - File exists and overwrite is False: C:\Users\Bilbo\Documents\python-projects\diamond-parser\data\staging\e1.txt
+2025-05-09 23:18:55 - main.py        :38  - main            - WARNING    - File already exists, trying again with overwrite=True: C:\Users\Bilbo\Documents\python-projects\diamond-parser\data\staging\e1.txt already exists and overwrite is False.
+2025-05-09 23:18:55 - file_manager.py:218 - save_file       - INFO       - Saved file: C:\Users\Bilbo\Documents\python-projects\diamond-parser\data\staging\e1.txt
+2025-05-09 23:18:55 - main.py        :42  - main            - INFO       - Saved e1.txt to staging_data_dir (overwrite=True)

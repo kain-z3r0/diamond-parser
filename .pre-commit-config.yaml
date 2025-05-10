@@ -1,0 +1,36 @@
+# .pre-commit-config.yaml
+# ----------------------------------------
+# Place this file in your project root directory.
+# Example: /diamond-parser/.pre-commit-config.yaml
+#
+# HOW TO USE:
+# 1. Install pre-commit:
+#    pip install pre-commit
+#
+# 2. Install the hooks into git:
+#    pre-commit install
+#
+# 3. Run checks manually (optional):
+#    pre-commit run --all-files
+#
+# WHEN DOES IT RUN:
+# - Automatically runs on every `git commit`.
+# - You can run it manually anytime to clean up the repo.
+
+repos:
+  - repo: https://github.com/psf/black
+    rev: 24.3.0  # Use the latest stable Black release
+    hooks:
+      - id: black
+        language_version: python3.13  # Match your Python version
+
+  - repo: https://github.com/pycqa/flake8
+    rev: 7.0.0
+    hooks:
+      - id: flake8
+
+  - repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: v4.5.0
+    hooks:
+      - id: end-of-file-fixer
+      - id: trailing-whitespace
