@@ -1,12 +1,12 @@
-import app_config
-
-from pathlib import Path
 import csv
 import json
+from pathlib import Path
+from typing import Any, ClassVar, Protocol, Type
 
-import pandas as pd d
+import app_config
+import d
+import pandas as pd
 
-from typing import Any, Protocol, ClassVar, Type
 
 class FileHandler(Protocol):
     @classmethod

@@ -38,3 +38,23 @@ repos:
         exclude: ^archive/
       - id: trailing-whitespace
         exclude: ^archive/
+
+  - repo: https://github.com/pre-commit/mirrors-mypy
+    rev: v1.15.0
+    hooks:
+      - id: mypy
+        args: ["--exclude", "^archive/", "--explicit-package-bases"]
+        exclude: ^archive/
+
+  - repo: https://github.com/pycqa/isort
+    rev: 6.0.1
+    hooks:
+      - id: isort
+        exclude: ^archive/
+
+  - repo: https://github.com/PyCQA/bandit
+    rev: 1.8.3
+    hooks:
+      - id: bandit
+        args: ["--exclude", "tests/"]
+        exclude: ^archive/

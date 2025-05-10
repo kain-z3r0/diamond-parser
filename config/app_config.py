@@ -20,11 +20,12 @@ Dependencies:
     pathlib, logging, json, sys, pydantic
 """
 
-from pathlib import Path
-import logging.config
 import json
-from pydantic import BaseModel
+import logging.config
+from pathlib import Path
 from typing import Dict
+
+from pydantic import BaseModel
 
 __all__ = ["AppConfig"]  # Only expose AppConfig when using `from app_config import *`
 

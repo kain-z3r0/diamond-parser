@@ -31,7 +31,7 @@ Dependencies:
 
 import json
 from pathlib import Path
-from typing import Protocol, Type, ClassVar, Any
+from typing import Any, ClassVar, Protocol, Type
 
 from config.app_config import AppConfig
 
@@ -49,65 +49,37 @@ class FileHandler(Protocol):
     def save(cls, data: str | dict[str, Any], filepath: Path) -> None: ...
 
 
-class JSONFileHandler:
+class JSONFileHandler(FileHandler):
     """
     Handler for reading and writing JSON files.
     """
 
     @classmethod
     def load(cls, filepath: Path) -> dict[str, Any]:
-        """
-        Load JSON data from a file.
-
-        Args:
-            filepath (Path): Path to the JSON file.
-
-        Returns:
-            dict[str, Any]: Parsed JSON data.
-        """
         with filepath.open("r", encoding="utf-8") as f:
             return json.load(f)
 
     @classmethod
-    def save(cls, data: dict[str, Any], filepath: Path) -> None:
-        """
-        Save data as JSON to a file.
-
-        Args:
-            data (dict[str, Any]): Data to save.
-            filepath (Path): Path to the JSON file.
-        """
+    def save(cls, data: str | dict[str, Any], filepath: Path) -> None:
+        if not isinstance(data, dict):
+            raise TypeError("JSONFileHandler.save expects a dict")
         with filepath.open("w", encoding="utf-8") as f:
             json.dump(data, f, indent=2)
 
 
-class TextFileHandler:
+class TextFileHandler(FileHandler):
     """
     Handler for reading and writing text files.
     """
 
     @classmethod
     def load(cls, filepath: Path) -> str:
-        """
-        Load text content from a file.
-
-        Args:
-            filepath (Path): Path to the text file.
-
-        Returns:
-            str: File content as a string.
-        """
         return filepath.read_text(encoding="utf-8")
 
     @classmethod
-    def save(cls, data: str, filepath: Path) -> None:
-        """
-        Save text content to a file.
-
-        Args:
-            data (str): Text data to save.
-            filepath (Path): Path to the text file.
-        """
+    def save(cls, data: str | dict[str, Any], filepath: Path) -> None:
+        if not isinstance(data, str):
+            raise TypeError("TextFileHandler.save expects a str")
         filepath.write_text(data, encoding="utf-8")
 
 
@@ -123,40 +95,13 @@ class FileManager:
     }
 
     def __init__(self, config: AppConfig):
-        """
-        Initialize FileManager with an AppConfig instance.
-
-        Args:
-            config (AppConfig): Application configuration.
-        """
         self.config = config
-        self.logger = config.logger  # Use AppConfig logger for logging
+        self.logger = config.logger
 
     def _to_path(self, filename: str | Path) -> Path:
-        """
-        Convert a string or Path to a Path object.
-
-        Args:
-            filename (str | Path): Filename or Path.
-
-        Returns:
-            Path: Path object.
-        """
         return filename if isinstance(filename, Path) else Path(filename)
 
     def _get_handler(self, filepath: Path) -> Type[FileHandler]:
-        """
-        Get the handler class for a file based on its extension.
-
-        Args:
-            filepath (Path): File path.
-
-        Returns:
-            Type[FileHandler]: Corresponding file handler class.
-
-        Raises:
-            ValueError: If the file extension is unsupported.
-        """
         ext = filepath.suffix.lower()
         handler = self._handlers.get(ext)
         if not handler:
@@ -165,19 +110,6 @@ class FileManager:
         return handler
 
     def load_file(self, dir_key: str, filename: str) -> str | dict[str, Any]:
-        """
-        Load a file from a directory specified by the config.
-
-        Args:
-            dir_key (str): Directory key from the config.
-            filename (str): Filename to load.
-
-        Returns:
-            str | dict[str, Any]: Loaded file data.
-
-        Raises:
-            IOError: If the file cannot be loaded.
-        """
         base_dir = self.config.get_path(dir_key)
         filepath = base_dir / filename
         handler = self._get_handler(filepath)
@@ -189,20 +121,13 @@ class FileManager:
             self.logger.error(f"Failed to load file {filepath}: {e}")
             raise IOError(f"Failed to load {filepath}: {e}") from e
 
-    def save_file(self, data: str | dict[str, Any], dir_key: str, filename: str, overwrite: bool = True) -> None:
-        """
-        Save data to a file in a directory specified by the config.
-
-        Args:
-            data (str | dict[str, Any]): Data to save.
-            dir_key (str): Directory key from the config.
-            filename (str): Filename to save.
-            overwrite (bool): Whether to overwrite if the file exists.
-
-        Raises:
-            FileExistsError: If overwrite is False and file exists.
-            IOError: If the file cannot be saved.
-        """
+    def save_file(
+        self,
+        data: str | dict[str, Any],
+        dir_key: str,
+        filename: str,
+        overwrite: bool = True,
+    ) -> None:
         base_dir = self.config.get_path(dir_key)
         filepath = base_dir / filename
 

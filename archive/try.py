@@ -1,7 +1,7 @@
-from pathlib import Path
-import logging.config
 import json
+import logging.config
 import sys
+from pathlib import Path
 
 
 class AppConfig:
