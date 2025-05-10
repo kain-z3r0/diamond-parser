@@ -1,6 +1,6 @@
 import logging
 from config.app_config import AppConfig
-from core.fm_wip import FileManager
+from core.file_manager import FileManager
 
 def main():
     # Initialize AppConfig to load settings and configure logger
@@ -14,20 +14,23 @@ def main():
     file_manager = FileManager(config)
     
     # Define sample data to save as JSON
-    data = {"key": "value", "number": 42}
-    output_dir_key = "output_data_dir"
-    filename = "example.json"
+    filename = "e1.txt"
+    
+    
+    # Load data file test
+    data = file_manager.load_file("raw_data_dir", filename)
+    logger.info("Loaded data: {data}")
+    
+    
+    new_data = data + "NEW LINE!!!!! The Dodgers are losing!"
     
     # Save the data to output_data_dir
-    file_manager.save_to_config(data, output_dir_key, filename)
-    logger.info(f"Saved {filename} to {output_dir_key}")
+    file_manager.save_file(new_data, "staging_data_dir", filename)
+    logger.info(f"Saved {filename} to staging_data_dir")
     
-    # Load the data back and log it
-    loaded_data = file_manager.load_from_config(output_dir_key, filename)
-    logger.info(f"Loaded data: {loaded_data}")
     
     # Print the loaded data to console
-    print(loaded_data)
+    print(new_data)
 
 if __name__ == "__main__":
     main()

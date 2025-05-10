@@ -1,3 +1,43 @@
+"""
+FileManager Module
+==================
+
+Provides functionality for loading and saving files using various handlers.
+It includes a `FileHandler` protocol with concrete implementations for JSON and
+text files, and a `FileManager` class that handles the correct file type based on
+file extension.
+
+Components:
+-----------
+- `FileHandler` protocol: Defines `load(filepath)` and `save(data, filepath)` methods.
+- `JSONFileHandler`: Implements JSON file handling using the `json` module.
+- `TextFileHandler`: Handles plain text files using the `pathlib` module.
+- `FileManager`: Manages file operations, choosing the correct handler based on file extension.
+
+Usage:
+------
+```python
+from config.app_config import AppConfig
+from file_manager import FileManager
+
+config = AppConfig()
+fm = FileManager(config)
+
+# Load a JSON file from the 'data_dir' path:
+data = fm.load_file('data_dir', 'data.json')
+
+# Save a text file to the 'logs_dir' path:
+fm.save_file("Hello, world!", 'logs_dir', 'notes.txt')
+
+
+Dependencies:
+-------------
+    - json
+    - pathlib
+    - typing
+    - config.app_config.AppConfig
+"""
+
 import json
 from pathlib import Path
 from typing import Protocol, Type, ClassVar, Any
@@ -8,7 +48,6 @@ from config.app_config import AppConfig
 class FileHandler(Protocol):
     @classmethod
     def load(cls, filepath: Path) -> str | dict[str, Any]: ...
-
     @classmethod
     def save(cls, data: str | dict[str, Any], filepath: Path) -> None: ...
 
