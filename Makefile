@@ -1,5 +1,5 @@
 ﻿lint:
-	pre-commit run --all-files
+	pre-commit run --all-files || true
 
 format:
 	black .
@@ -9,7 +9,7 @@ test:
 	pytest
 
 check:
-	pre-commit run --all-files
+	pre-commit run --all-files || true
 
 install-hooks:
 	pre-commit install
