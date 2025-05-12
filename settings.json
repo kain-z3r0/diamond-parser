@@ -8,7 +8,8 @@
 		"raw_data_dir": "data/raw",
 		"output_data_dir": "data/output",
 		"staging_data_dir": "data/staging",
-		"logs_dir": "logs"
+		"logs_dir": "logs",
+        "tests_dir": "tests"
 	},
 
 	"logging": {
